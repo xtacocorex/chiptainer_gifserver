@@ -18,7 +18,6 @@ docker rmi `docker images | grep chiptainer_gifserver | grep "<none>" | tr -s " 
 # RUN THE CONTAINER
 docker run \
          --rm \
-         -it \
          --name gifserver \
          --privileged \
          --net=host \
