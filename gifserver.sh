@@ -4,7 +4,7 @@
 set_antenna ufl
 
 # MAKE DIRECTORY FOR PICTURES
-mkdir -p /mnt/pictures
+mkdir -p /data/pictures
 
 # REMOVE ANY PREVIOUS INSTANCE OF THE CONTAINER
 docker rm gifserver
@@ -22,5 +22,5 @@ docker run \
          --privileged \
          --net=host \
          -v /sys:/sys \
-         --volume=/mnt/pictures:/mnt/pictures \
+         --volume=/data/pictures:/data/pictures \
          xtacocorex/chiptainer_gifserver:latest
