@@ -1,5 +1,5 @@
-# BASE OFF THE PYTHON IO CHIPTAINER
-FROM nextthingco/chiptainer_python_io
+# BASE OFF MY GADGET CHIP IO CHIPTAINER
+FROM xtacocorex/gadget-chip-io
 
 # INSTALL THE THINGS
 RUN apk update && \
@@ -14,7 +14,9 @@ RUN apk update && \
     cp -r gifserver / && \
     cd ../ && rm -rf claptto && \
     # Remove unneeded packages once build is complete.
-    apk del git
+    apk del git && \
+    # REMOVE CACHE
+    rm -rf /var/cache/apk/*
 
 # EXPOSE PORT 80 FOR THE GIFSERVER
 EXPOSE 80
